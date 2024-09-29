@@ -1,6 +1,6 @@
 Here's a customized README for your React Native project:
 
-# Job Application Tool
+# Job Finder
 
 This React Native project is designed to help users easily apply for job offers, which are fetched via an API from [RAPID API](https://rapidapi.com/). The app provides a simple, intuitive interface for browsing and applying to job offers.
 
@@ -15,8 +15,8 @@ This React Native project is designed to help users easily apply for job offers,
 
 1. **Clone the repository**:
    ```sh
-   git clone https://github.com/yourusername/job-application-tool.git
-   cd job-application-tool
+   git clone https://github.com/jp-grilo/Job_Finder.git
+   cd Job_Finder
    ```
 
 2. **Install dependencies**:
