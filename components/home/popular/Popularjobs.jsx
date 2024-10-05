@@ -27,7 +27,6 @@ const PopularJobs = () => {
     try {
       const { data } = await useFetch("search", {
         query: "React developer",
-        num_pages: 1,
       });
       setData(data);
     } catch (err) {
@@ -41,6 +40,8 @@ const PopularJobs = () => {
     fetchData();
   }, []);
 
+  const [selectedJob, setSelectedJob] = useState();
+
   const handleCardPress = (item) => {
     router.push(`/job-details/${item.job_id}`);
     setSelectedJob(item.job_id);
@@ -50,7 +51,7 @@ const PopularJobs = () => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Popular Jobs</Text>
-        <TouchableOpacity onPress={fetchData}>
+        <TouchableOpacity>
           <Text style={styles.headerBtn}>Show all</Text>
         </TouchableOpacity>
       </View>
@@ -70,7 +71,7 @@ const PopularJobs = () => {
                 handleCardPress={handleCardPress}
               />
             )}
-            keyExtractor={(item) => item?.job_id}
+            keyExtractor={(item) => item.job_id}
             contentContainerStyle={{ columnGap: SIZES.medium }}
             horizontal
           />
